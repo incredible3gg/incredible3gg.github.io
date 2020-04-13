@@ -18,6 +18,7 @@
 		       //foods
 		       var yum = ["chicken nuggets","chanterelle","candy","chocolate"];
 		       var yuck = ["poop soup","pickle","ravioli","pizza cheese"];
+		       var points = 0
 		       var foods = {
 		       	"chicken nuggets":"yummy",
 		       	"chanterelle":"yummy",
@@ -45,7 +46,13 @@ _V
 		       //food check
 		       function checkFood() {
 		       input = document.getElementById('food').value;
-		       	document.getElementById('answer').innerHTML = foods[input]
+		       	if (foods[input] !== undefined) {
+		       		document.getElementById('answer').innerHTML = foods[input];
+		       		points++;
+		       		document.getElementById('mushroom').innerHTML = points;
+		       	} else {
+		       		document.getElementById('answer').innerHTML = "nooooot a food! not a food! not a food!";
+		       	}
 		       };
 		       
 		       </script>
